@@ -1,0 +1,2 @@
+%% Reference: V. Petrov, D. Moltchanov, P. Kustarev, J. M. Jornet and Y. Koucheryavy, "On the Use of Integral Geometry for Interference Modeling and Analysis in Wireless Networks," in IEEE Communications Letters, vol. 20, no. 12, pp. 2530-2533, Dec. 2016.
+% Show the mean aggregated interference for different radii of the interference zone. (Fig2.c)
