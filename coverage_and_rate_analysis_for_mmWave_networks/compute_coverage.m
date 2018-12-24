@@ -28,10 +28,10 @@ b = [cr*ct, cr*(1-ct), (1-cr)*ct, (1-cr)*(1-ct)];
 
 syms n;
 syms k;
-Qnx = 2*pi*lambda*symsum(b(k) * int((1 - 1/(1 + n * (NL * (factorial(NL))^(-1/NL)) * (a(k)/(Mt*Mr)) * T * x^alphaL / (NL * r^alphaL))^NL) * pr * r, r, x, inf), k, 1, 4);
-Vnx = 2*pi*lambda*symsum(b(k) * int((1 - 1/(1 + n * CN * (NL * (factorial(NL))^(-1/NL)) * (a(k)/(Mt*Mr)) * T * x^alphaL / (CL * NN * r^alphaN))^NN) * (1 - pr) * r, r, psiLx, inf), k, 1, 4);
-Wnx = 2*pi*lambda*symsum(b(k) * int((1 - 1/(1 + n * CL * (NN * (factorial(NN))^(-1/NN)) * (a(k)/(Mt*Mr)) * T * x^alphaN / (CN * NL * r^alphaL))^NL) * pr * r, r, psiNx, inf), k, 1, 4);
-Znx = 2*pi*lambda*symsum(b(k) * int((1 - 1/(1 + n * (NN * (factorial(NN))^(-1/NN)) * (a(k)/(Mt*Mr)) * T * x^alphaN / (NN * r^alphaN))^NN) * (1 - pr) * r, r, x, inf), k, 1, 4);
+Qnx = 2 * pi * lambda * sum(b .* int((1 - 1/(1 + n * (NL * (factorial(NL))^(-1/NL)) * (a ./(Mt*Mr)) * T * x^alphaL / (NL * r^alphaL)).^NL) * pr * r, r, x, inf));
+Vnx = 2 * pi * lambda * sum(b .* int((1 - 1/(1 + n * CN * (NL * (factorial(NL))^(-1/NL)) * (a ./(Mt*Mr)) * T * x^alphaL / (CL * NN * r^alphaN)).^NN) * (1 - pr) * r, r, psiLx, inf));
+Wnx = 2 * pi * lambda * sum(b .* int((1 - 1/(1 + n * CL * (NN * (factorial(NN))^(-1/NN)) * (a ./(Mt*Mr)) * T * x^alphaN / (CN * NL * r^alphaL)).^NL) * pr * r, r, psiNx, inf));
+Znx = 2 * pi * lambda * sum(b .* int((1 - 1/(1 + n * (NN * (factorial(NN))^(-1/NN)) * (a ./(Mt*Mr)) * T * x^alphaN / (NN * r^alphaN)).^NN) * (1 - pr) * r, r, x, inf));
 
 PcLT = symsum((-1)^n+1 * nchoosek(NL, n) * int(exp(- n * (NL * (factorial(NL))^(-1/NL)) * x^alphaL * T * sigma^2 / (CL * Mr * Mt) - Qnx - Vnx) * ffLx, x, 0, inf), n, 1, NL);
 PcNT = symsum((-1)^n+1 * nchoosek(NN, n) * int(exp(- n * (NN * (factorial(NN))^(-1/NN)) * x^alphaN * T * sigma^2 / (CN * Mr * Mt) - Wnx - Znx) * ffNx, x, 0, inf), n, 1, NN);
