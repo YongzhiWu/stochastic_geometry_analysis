@@ -1,3 +1,3 @@
 # Simulations for Stochastic Geometry Analysis Using MATLAB
 
-Tips: Actually, this repository is not very useful and will not update. In the last few months, I have learned a lot more about stochastic geometry analysis. I will add a new one focusing on stochastic geometry analysis for wireless network to share and conclude how to experiment stochastic geometry simulations. If you are interested in this topic, you can follow the new repository.
+Tips: Actually, this repository is not very useful and will not update. In the last few months, I have learned a lot more about stochastic geometry analysis. I will add a new one focusing on stochastic geometry analysis for wireless network to share and conclude how to experiment stochastic geometry simulations. If you are interested in this topic, you can move to the [new repository](https://github.com/YongzhiWu/stochastic_geometry_in_wireless_networks).
