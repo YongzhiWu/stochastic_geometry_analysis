@@ -1,4 +1,4 @@
-function [ I ] = get_mean_interference( Pt, p, lambda, cdd, dd, cds, ds, kaf, R )
+function [ I ] = get_mean_interference( Pt, p, lambda, cdd, dd, cds, ds, kaf)
 %get_mean_interference return the mean of interference power in THz
 %networks
 %   Input:
@@ -10,7 +10,7 @@ function [ I ] = get_mean_interference( Pt, p, lambda, cdd, dd, cds, ds, kaf, R 
 %   kaf, absorption, coefficient
 
 syms r;
-I = Pt * p * lambda * cdd * dd / (cds * ds)^2 * double(int( r^(dd - 2 * ds + 1) * exp(- 2 * kaf * r) , r, 0, inf));
+I = Pt * p * lambda * cdd * dd / (cds * ds) * double(int( r^(dd - ds) * exp(- kaf * r) , r, realmin, inf));
 
 end
 
